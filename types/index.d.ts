@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Props as FloaterType } from 'react-floater';
+import { Props as FloaterType } from 'react-floater-joyride';
 
 export type valueof<T> = T[keyof T];
 
@@ -159,6 +159,7 @@ export interface Step extends CommonProps {
   disableBeacon?: boolean;
   event?: string;
   floaterProps?: FloaterType;
+  portalElement?: string | null | HTMLElement;
   hideFooter?: boolean;
   isFixed?: boolean;
   offset?: number;

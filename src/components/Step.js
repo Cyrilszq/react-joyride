@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Floater from 'react-floater';
+import Floater from 'react-floater-joyride';
 import treeChanges from 'tree-changes';
 import is from 'is-lite';
 
@@ -35,6 +35,7 @@ export default class JoyrideStep extends React.Component {
     size: PropTypes.number.isRequired,
     status: PropTypes.string.isRequired,
     step: PropTypes.shape({
+      portalElement: PropTypes.any,
       beaconComponent: componentTypeWithRefs,
       content: PropTypes.node.isRequired,
       disableBeacon: PropTypes.bool,
@@ -307,6 +308,7 @@ export default class JoyrideStep extends React.Component {
           open={this.open}
           placement={step.placement}
           target={step.target}
+          portalElement={step.portalElement}
           {...step.floaterProps}
         >
           <Beacon
