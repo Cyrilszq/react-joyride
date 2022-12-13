@@ -1,11 +1,14 @@
 {
   "name": "react-joyride-next",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "description": "Create guided tours for your apps",
   "author": "cyrilszq <cyrilszq@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cyrilszq/react-joyride.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "homepage": "https://react-joyride.com/",
   "keywords": [
@@ -35,7 +38,7 @@
     "exenv": "^1.2.2",
     "is-lite": "^0.9.2",
     "prop-types": "^15.8.1",
-    "react-floater-joyride": "^0.7.6",
+    "react-floater-joyride": "^0.7.7",
     "react-is": "^16.13.1",
     "scroll": "^3.0.1",
     "scrollparent": "^2.0.1",
@@ -120,21 +123,19 @@
     "test:coverage": "jest --bail --coverage",
     "test:watch": "jest --watchAll --verbose",
     "format": "prettier \"**/*.{js,jsx,ts,tsx}\" --write",
-    "validate": "npm run lint && npm run test:coverage && flow && npm run build && npm run size",
-    "size": "size-limit",
-    "prepublishOnly": "npm run validate",
-    "prepare": "husky install"
+    "validate": "npm run lint && flow && npm run build && npm run size",
+    "size": "size-limit"
   },
   "size-limit": [
     {
       "name": "lib",
       "path": "./lib/index.js",
-      "limit": "32 kB"
+      "limit": "60 kB"
     },
     {
       "name": "esm",
       "path": "./es/index.js",
-      "limit": "32 kB"
+      "limit": "60 kB"
     }
   ],
   "lint-staged": {
